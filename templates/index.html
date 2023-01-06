@@ -1,0 +1,8 @@
+{% block content %}
+    <h1>{% block title %} Main page {% endblock %}</h1>
+    {% if msgs %}
+        {% for m in msgs%}
+            {{ m }}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

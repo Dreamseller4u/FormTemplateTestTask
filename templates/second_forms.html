@@ -1,0 +1,21 @@
+{% block content %}
+    <h1>{% block title %} Find form template {% endblock %}</h1>
+    <form method="post">
+        <label for="f_name1">Fields: </label>
+        <input type="text" name="f_name1" placeholder="Field name" value="{{ request.form['f_name1'] }}"></input>
+        <input type="text" name="f_value1" placeholder="Field value" value="{{ request.form['f_valeu1'] }}"></input>
+        <br>
+        <label for="f_name2">Fields: </label>
+        <input type="text" name="f_name2" placeholder="Field name" value="{{ request.form['f_name2'] }}"></input>
+        <input type="text" name="f_value2" placeholder="Field value" value="{{ request.form['f_valeu2'] }}"></input>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    {% if match_form and match_form.name  %}
+       <h4> Name of form template : {{ match_form.name }} </h4> 
+    {% else  %}
+        {% for item in match_form %}
+            {{ item }}
+        {% endfor %}
+    {% endif %}
+{% endblock %}
